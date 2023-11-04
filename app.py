@@ -1,5 +1,6 @@
 from flask import render_template, jsonify
 from flask import Flask
+from api.data import api_data
 app = Flask(__name__)
 
 @app.route('/')
@@ -11,14 +12,14 @@ def about():
     #return render_template('about.html')
     return render_template('templates/about.html') 
 
-@app.route('/api/data')
-def api_data():
-    data = {
-        'name': 'Noel Draxler',
-        'age': 20,
-        'location': 'Cameroon - Bangangte'
-    }
-    return jsonify(data)
+# @app.route('/api/data')
+# def api_data():
+#     data = {
+#         'name': 'Noel Draxler',
+#         'age': 20,
+#         'location': 'Cameroon - Bangangte'
+#     }
+#     return jsonify(data)
 
 if __name__ == '__main__':
     app.run(port=8080, debug=True)
